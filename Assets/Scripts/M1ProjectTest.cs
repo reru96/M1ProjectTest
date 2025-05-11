@@ -36,7 +36,7 @@ public class M1ProjectTest : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log("The Duel Start:" + hero_a.name_ + " VS " + hero_b.name_ + ".");
+        Debug.Log("The Duel Start: " + hero_a.name_ + " VS " + hero_b.name_ + ".");
 
     }
 

@@ -43,6 +43,7 @@ public struct Stats
     }
 }
 
+[Serializable]
 public enum ELEMENT
 {
     NONE, FIRE, ICE, ELECTRICS
@@ -177,7 +178,8 @@ public class Hero
     {
         if (hp == 0)
         { return false; }
-        else return true;
+        else
+        { return true; }
     }
 
 }
@@ -188,15 +190,21 @@ public static class GameFormulas
     {
 
         if (attackElement == defender.weakness_)
-        { return true; }
+        {
+            return true;
+        }
         else
+        {
             return false;
+        }
     }
 
     public static bool ElementDisadvantage(ELEMENT attackElement, Hero defender)
     {
-        if (attackElement == defender.resistence_) { return true; }
-        else return false;
+        if (attackElement == defender.resistence_)
+        { return true; }
+        else
+        { return false; }
     }
 
     public static float EvaluateElementalModifier(ELEMENT attackElement, Hero defender)
@@ -208,11 +216,12 @@ public static class GameFormulas
         }
         else if (ElementDisadvantage(attackElement, defender) && !HasElementAdvantage(attackElement, defender))
         {
-             Debug.Log("RESIST");
+            Debug.Log("RESIST");
             return 0.5f;
         }
         else
-            return 1f;
+        { return 1f; }
+
     }
 
     public static bool HasHit(Stats attacker, Stats defender)
@@ -240,7 +249,9 @@ public static class GameFormulas
             return true;
         }
         else
+        {
             return false;
+        }
     }
 
     public static int CalculateDamage(Hero attacker, Hero defender)

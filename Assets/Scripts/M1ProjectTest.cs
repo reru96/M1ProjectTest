@@ -73,9 +73,13 @@ public class M1ProjectTest : MonoBehaviour
 
         Debug.Log("Duel ended");
         if (!hero_a.IsAlive(hero_a.hp_))
+        {
             Debug.Log(hero_a.name_ + " is defeated. " + hero_b.name_ + " wins.");
+        }
         else if (!hero_b.IsAlive(hero_b.hp_))
+        {
             Debug.Log(hero_b.name_ + " is defeated. " + hero_a.name_ + " wins.");
+        }
     }
 
     private void Attack(Hero attacker, Hero defender)
@@ -92,6 +96,6 @@ public class M1ProjectTest : MonoBehaviour
         {
             Debug.Log(attacker.name_ + "'s attack missed!");
         }
-        
+
     }
 }
